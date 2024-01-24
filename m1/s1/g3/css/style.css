@@ -4,13 +4,48 @@ selettore{
 }
 */
 
-div{
+div{/*peso : 1*/
     color:red;
     background-color: blue;
 }
 
-h2 span{
+h2 span{/*peso 2*/
     text-decoration: underline;
+}
+span{/*peso 1 quindi perde il conflitto in favore del blocco alla riga 12*/
+    /*
+    impatta tutti gli span che stanno fuori da un h2, ma non può modificare quelli che si trovano all'interno di un h2
+    */
+    text-decoration: overline;
+}
+
+ul, ol{/*peso 1, peso 1*/
+    margin-left: 10;
 }
 
 
+#colore-verde{/*peso 100*/
+    color: green;
+}
+
+.colore-giallo{/*peso 10*/
+    color: yellow;
+    border: 1px solid #000;
+}
+.colore-blu{
+    color: blue;
+}
+
+/*selezione con multipli selettori per aumentare la specificità*/
+
+.colore-giallo.colore-blu{/*peso 20*/
+    font-size: 30px;
+}
+
+h3.colore-giallo.colore-blu{/*peso 21*/
+    font-size: 45px;
+}
+
+h3{
+    color: red !important;
+}
