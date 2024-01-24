@@ -1,0 +1,30 @@
+:root{
+    --main-yellow: #ffd877;
+    --light-yellow: #fdfbf1;
+    --main-green: #004d4c;
+}
+
+body{
+    margin: 0;
+}
+
+#header{
+    text-align: center;
+}
+
+
+.container{
+    width: 800px;
+    margin: 0 auto;
+}
+
+.yellow-bar{
+    background-color: var(--light-yellow);
+    border-top: 1px solid var(--main-yellow);
+    padding-bottom: 10px;
+    color: var(--main-green);
+}
+
+.yellow-bar b{
+    text-transform: uppercase;
+}
