@@ -1,0 +1,16 @@
+/* commento
+selettore{
+    proprietà/regola:valore;
+}
+*/
+
+div{
+    color:red;
+    background-color: blue;
+}
+
+h2 span{
+    text-decoration: underline;
+}
+
+
