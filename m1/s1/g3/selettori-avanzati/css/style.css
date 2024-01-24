@@ -1,0 +1,52 @@
+#genitore > p{
+    color: red;
+}
+
+blockquote + p{
+    /*il primo p successivo ed adiacente al blockquote*/
+    border: 4px solid green;
+}
+
+
+a{
+    color: black;
+}
+a:visited{
+    color: black;
+}
+a:active{
+    color: black;
+}
+
+a:hover{
+    background-color: red;
+    transition: 0.5s;
+}
+
+/*codice tabella*/
+
+
+table{
+    width: 100%;
+}
+td{
+    border: 1px solid #000;
+}
+
+tr:nth-of-type(odd){
+    background-color: red;
+}
+
+tr:nth-of-type(2) td:first-child{
+    font-weight: bold;
+}
+
+/*pseudo elementi*/
+tr td:first-child:not(.escluso)::after{
+    content:"#";
+    background-color: blue;
+    color: yellow;
+}
+
+
+
