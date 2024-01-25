@@ -1,0 +1,22 @@
+#box{
+    background-image: url(../img/immagine.jpg);
+    height: 700px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid #000;
+    background-color: blue;
+}
+#box2{
+    background-image: url(../img/CSS3_logo.svg), url(https://picsum.photos/500/300);
+    height: 200px;
+    background-size: 100px,  cover;
+    background-repeat: repeat-y;
+    background-position: left, bottom;
+    border: 1px solid #000;
+}
+
+#box3{
+    height: 200px;
+    background-image: linear-gradient(30deg, salmon, purple);
+}
