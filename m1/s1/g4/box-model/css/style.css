@@ -1,0 +1,24 @@
+.quadrato{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+#d2{
+    background-color: red;
+    min-height: 50px;
+    max-height: 75px;
+}
+#d3{
+    background-color: blue;
+    max-width: 800px;
+}
+
+#d4{
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+*{
+    box-sizing: border-box;
+}
