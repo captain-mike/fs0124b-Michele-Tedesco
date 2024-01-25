@@ -1,3 +1,5 @@
+
+
 .quadrato{
     width: 100px;
     height: 100px;
@@ -16,9 +18,24 @@
 
 #d4{
     padding: 15px;
+    /*
+    potevo anche scrivere: 
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+
+    padding diversi per asse
+
+    padding: 0 15px; top e bottom = 0, left e right = 15px
+
+    padding: 0 15px 0 15px; top = 0, right = 15px, bottom = 0, left = 15px
+
+    NON SONO ACCETTATI NUMERI NEGATIVI
+
+    */
+
     box-sizing: border-box;
 }
 
-*{
-    box-sizing: border-box;
-}
+
