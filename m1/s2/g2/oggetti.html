@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        const obj = {
+            string:'',
+            number:0,
+            boolean:true,
+            oggetto:{},
+            array:[]
+        }
+
+
+        {
+
+
+            let pizza = {
+                gusto:'Margherita',
+                prezzo:5,
+                disponibile: true,
+                'lista ingredienti':'mozzarella, pomodoro'
+            }
+
+            //scrittura di una proprietà
+            pizza.gusto = 'Diavola';
+
+            //lettura di una proprietà
+            console.log( pizza.gusto );
+            
+            //lettura di un valore, da una prop il cui nome non rispetta la sintassi
+            console.log( pizza['lista ingredienti'] );
+
+        }
+
+
+
+        
+
+        {
+
+            //funzione costruttore
+            function Pizza(){
+               this.gusto = 'Margherita';
+               this.prezzo = 5;
+               this.disponibile = true
+            }
+
+            let margherita = new Pizza();
+            let diavola = new Pizza();
+            diavola.gusto = 'Diavola';
+
+            document.write(margherita)//non posso mostrare a schermo l'oggetto intero, devo selezionare una proprietà
+            document.write(margherita.gusto)//così posso effettivamente mostrare il gusto
+
+            console.log(margherita, diavola);
+            
+        }
+
+
+    </script>
+
+</body>
+</html>
