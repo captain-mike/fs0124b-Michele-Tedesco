@@ -6,40 +6,27 @@
     <title>Document</title>
 </head>
 <body>
-    
+
     <script>
 
         let arrPizze = ['Margherita','Diavola','Capricciosa']
         
-        for(let i = 0; i < arrPizze.length; i++){
+        for(let pizzaCiclata of arrPizze){
 
-            if(arrPizze[i] == 'Diavola'){
+            if(pizzaCiclata == 'Diavola'){
                 continue;
             }
             
-            console.log( arrPizze[i] );
+            console.log( pizzaCiclata );
         }
 
         let numeri = [14,5,2,4,7,8,9];
         let somma = 0;
 
-        for(let i = 0; i < numeri.length; i++){
-            somma += numeri[i]
+        for(let n of numeri){
+            somma += n
         }
         console.log(somma);
-
-
-        //filtrare i numeri superiori a 5
-        let res = [];
-        for(let i = 0; i < numeri.length; i++){
-            let numerociclato = numeri[i];
-
-            if(numerociclato > 5){
-                res.push(numerociclato)
-            }
-            
-        }
-        console.log(res)
 
 
         //estraggo i nomi di tutti gli utenti
@@ -54,14 +41,15 @@
             }
         ]
         let nomi = [];
-        for(let i = 0; i < users.length; i++){
-            nomi.push(users[i].nome)
+        let cognomi = [];
+        for(let utente of users){
+            nomi.push(utente.nome)
+            cognomi.push(utente.cognome)
         }
-        console.log(nomi)
 
-
-
+        console.log(nomi, cognomi);
 
     </script>
+    
 </body>
 </html>
