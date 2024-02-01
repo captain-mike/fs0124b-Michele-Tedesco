@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function mostraSaluto(){//definisco la funzione
+            console.log('Ciao');
+            console.log('Ciao');
+            console.log('Ciao');
+            console.log('Ciao');
+        }
+        
+        mostraSaluto();//invoco la funzione
+
+        //POSSIBILI ERRORI CHE POSSO FARE
+        console.log(mostraSaluto);//ho domenticato le parentesi tonde che avviano la funzione, quindi vedrò il contenuto della funzione
+        console.log(mostraSaluto());//datop che la funzione non ha alcun return ho come valore undefined, quindi forse sto usando come dato una funzione che non restituisce dati
+
+        console.error('===========================')
+
+
+        //funzioni che restituiscono dati
+
+        function restituisciSaluto(){
+            return 'ciao';
+        }
+
+        let saluto = restituisciSaluto();//posso salvare il dato in una variabile
+
+        console.log(saluto); //e successivamente usarlo in una direttiva di output
+        console.log(restituisciSaluto());//oppure usare direttamente la funzione come valore
+
+        
+
+    </script>
+</body>
+</html>
