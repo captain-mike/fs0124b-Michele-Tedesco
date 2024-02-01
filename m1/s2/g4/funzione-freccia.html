@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // function mostraSaluto(){//definisco la funzione
+        //     console.log('Ciao')
+        //     console.log('Ciao')
+        //     console.log('Ciao')
+        //     console.log('Ciao')
+        // }
+
+        let mostraSaluto = () => {//definisco la funzione
+            console.log('Ciao')
+            console.log('Ciao')
+            console.log('Ciao')
+            console.log('Ciao')
+        }
+
+        // function restituisciSaluto(){
+        //     return 'ciao';
+        // }
+
+        //se ho una sola riga da eseguire posso evitarew le graffe, in questo caso la parola chiave return è sottintesa
+        let restituisciSaluto = () => 'ciao'
+
+        console.log( restituisciSaluto() )
+
+        //se sono presenti le graffe, il return se vuoi utilizzarlo lo devi dichiarare
+        let incrementaESomma = (a,b) => {
+            a++
+            b++
+            return a + b
+        }
+
+        //se c'è un solo parametro, anche le parentesi tonde sono superflue
+        let raddoppia = a => a * 2
+
+
+        console.log(raddoppia(6546541))
+
+
+
+
+    </script>
+</body>
+</html>

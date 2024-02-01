@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let adesso = new Date();
+
+        console.log( adesso.getHours() )
+        console.log( adesso.getMinutes() )
+        //indice del giorno della settimana a partire da 0, dove il primo giorno è domenica
+        console.log( 'oggi è il: ' + adesso.getDay() )
+
+        console.log( 'mese: ' + adesso.getMonth() )//numero del mese partendo da zero
+
+
+        const options = {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+        };
+        console.log( adesso.toLocaleDateString('it-IT',options) )
+
+
+        //modificare la data
+
+
+        adesso.setMonth(2)//imposto la data a marzo
+
+        console.log( adesso )
+
+
+
+
+    </script>
+</body>
+</html>
