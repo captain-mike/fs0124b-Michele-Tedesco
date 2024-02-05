@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="test">Prova</div>
+    <div class="blocco">Elemento con la classe blocco</div>
+    <div class="blocco">Elemento con la classe blocco</div>
+    <div class="blocco">Elemento con la classe blocco</div>
+
+    <script>
+
+       
+        //posso selezionare un tag ottenendo un riferimento all'oggetto dom presente in pagina
+        const test = document.getElementById('test');
+        //mi devo ricordare che la ricerca potrebbe restituire null
+        //questo perchè magari non ho scritto bene l'id
+
+        //per la lettura e la scrittura delle proprietà degli oggeti DOM
+        //valgono le regole degli oggetti che già conosci
+
+        //quindi la lettura la fai così
+        console.log(test.innerText);
+
+        //la scrittura la fai così
+        test.innerText = 'ciao';
+        test.style.color = 'red';
+        test.style.color = 'yellow';
+
+        const classi = document.getElementsByClassName('blocco')
+        console.log(classi);
+
+        //l'unico modo per agire su una lista di elementi selezionati per classe o per tag è ciclare
+        for(let i = 0; i < classi.length ; i++){
+            classi[i].style.backgroundColor = 'green';
+            classi[i].innerText = 'Modificato';
+        }
+
+        
+        const tags = document.getElementsByTagName('div')
+        console.log(tags);
+        
+        /*getElementsByTagName e getElementsByClassName non sono esattamente array canonici, sono delle HTMLCollection quindi non dispongono dei metodi degli array*/
+
+        //Array.from() risolve il problema, convertendo la htmlcollection in un array
+        Array.from(tags).forEach(element => {
+
+            element.innerText = 'Modificato di nuovo'
+            
+        });
+
+
+
+    </script>
+
+</body>
+</html>
