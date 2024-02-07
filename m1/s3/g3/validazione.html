@@ -9,9 +9,9 @@
     
     <form>
 
-        <input type="text" placeholder="nome">
-        <input type="email" placeholder="Email">
-        <input type="password" placeholder="Password">
+        <input id="nome" type="text" placeholder="nome">
+        <input id="email" type="email" placeholder="Email">
+        <input id="password" type="password" placeholder="Password">
 
         <button id="invia">Invia</button>
     </form>
@@ -20,7 +20,42 @@
 
         const invia = document.getElementById('invia');
 
-        
+        invia.addEventListener('click',function(e){
+            e.preventDefault();//blocco l'invio del form
+
+            //validazione
+
+            //seleziono tutti i campi da controllare
+            let nome = document.querySelector('#nome')
+            let email = document.querySelector('#email')
+            let password = document.querySelector('#password')
+
+            let valid = true;
+
+            //controllo i valori
+            if(nome.value == ''){
+                console.log('campo nome vuoto')
+                valid = false
+            }
+
+            if(email.value == ''){
+                console.log('campo email vuoto')
+                valid = false
+            }
+            
+            if(password.value == ''){
+                console.log('campo password vuoto')
+                valid = false
+            }
+
+
+
+            if(valid){
+                //invia il form
+            }
+
+            
+        })
 
     </script>
 
