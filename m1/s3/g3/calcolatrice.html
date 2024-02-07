@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="calcolatrice">
+        <input id="display" type="text">
+        <button onclick="inserimento(this)">1</button>
+        <button onclick="inserimento(this)">2</button>
+        <button onclick="inserimento(this)">3</button>
+        <button onclick="inserimento(this)">4</button>
+        <button onclick="inserimento(this)">5</button>
+        <button onclick="inserimento(this)">6</button>
+        <button onclick="inserimento(this)">7</button>
+        <button onclick="inserimento(this)">8</button>
+        <button onclick="inserimento(this)">9</button>
+        <button onclick="inserimento(this)">0</button>
+        <button onclick="inserimento(this)">+</button>
+    </div>
+
+    <script>
+
+        function inserimento(elemento){
+
+           let simbolo = elemento.innerText
+
+           document.getElementById('display').value += simbolo
+
+        }
+
+
+    </script>
+
+</body>
+</html>
