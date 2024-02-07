@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .blocco{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="blocco"></div>
+
+    <button id="stop">stop</button>
+
+    <script>
+
+        let blocco = document.querySelector('.blocco')
+        let stopBtn = document.querySelector('#stop')
+
+        
+        let x = 0;
+        let timer = setInterval(()=>{
+            
+            blocco.style.marginLeft = x+'px';
+            x += 4;
+            
+            
+        }, 30)
+        
+        
+        stopBtn.addEventListener('click',function(){
+
+            clearInterval(timer)
+
+        })
+
+    </script>
+</body>
+</html>

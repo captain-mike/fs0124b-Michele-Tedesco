@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form id="myForm">
+
+        <input id="nome" required type="text" placeholder="nome">
+        <input id="email" pattern="" required type="email" placeholder="Email">
+        <input id="password" minlength="8" required type="password" placeholder="Password">
+
+        <button id="invia">Invia</button>
+    </form>
+
+    <script>
+
+        const invia = document.getElementById('invia');
+
+        invia.addEventListener('click',function(e){
+            e.preventDefault();//blocco l'invio del form
+
+           let form =  document.querySelector('#myForm')
+
+           let email = document.querySelector('#email')
+
+           console.log( form.checkValidity() )
+           console.log( email.validationMessage )
+           console.log( email.validity )
+
+           if(form.checkValidity()){
+            //invia il form
+           }
+
+            
+        })
+
+    </script>
+
+
+
+</body>
+</html>
