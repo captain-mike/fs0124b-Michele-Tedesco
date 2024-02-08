@@ -1,0 +1,100 @@
+:root{
+    --main-blue: #131334;
+    --dark-blue: #0c0b1d;
+    --main-purple: #7a408a;
+}
+/****************************************************************
+* Tipografia o stili generici 
+*/
+.month-name, .add-meeting-wrap h4, .input-title, .day {
+    font-weight: bold;
+}
+
+.month-name{
+    font-size: 3em;
+    text-transform: capitalize;
+}
+
+.day{
+    font-size: 1.3em;
+}
+
+.add-meeting-wrap h4{
+    font-size: 1.5em;
+    padding-bottom: 40px;
+}
+
+.epiCalendar input, .btn{
+    border: none;
+    padding: 8px 10px;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.epiCalendar input{
+    background-color: var(--dark-blue);
+    max-width: 100px;
+}
+
+.btn{
+    background-color: var(--main-purple);
+}
+
+
+/****************************************************************
+* box 
+*/
+
+.epiCalendar{
+    font-family: 'Roboto', sans-serif;
+    width: 500px;
+    background-color: var(--main-blue);
+    color: #fff;
+    padding: 5px 10px 30px 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.day-wrap{
+    background-color: var(--dark-blue);
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+/****************************************************************
+* giorni
+*/
+.day{
+    flex: 0 1 calc(100% / 7);
+    text-align: center;
+    padding: 25px 0;
+    cursor: pointer;
+}
+.day:hover{
+    background-image: linear-gradient(to top, var(--main-blue), var(--main-purple));
+}
+.day.today{
+    color: var(--main-purple);
+}
+
+
+/****************************************************************
+* form 
+*/
+.add-meeting-form{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.input-title{
+    padding-bottom: 20px;
+}
+
+.col{
+    flex: 1 1 auto;
+}
+
+.col.big-col{
+    flex-grow: 2;
+}
+
