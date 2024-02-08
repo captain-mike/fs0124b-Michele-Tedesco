@@ -1,0 +1,17 @@
+#tabellone{
+    border: 1px solid red;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cella{
+    flex: 0 1 10%;
+    text-align: center;
+    padding: 25px 0;
+    border-left: 1px solid red;
+    border-bottom: 1px solid red;
+    font-weight: bold;
+}
+.cella.estratta{
+    background-color: burlywood;
+}
