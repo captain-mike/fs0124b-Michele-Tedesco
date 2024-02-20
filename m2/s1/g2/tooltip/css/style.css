@@ -1,0 +1,33 @@
+.tooltip-wrap{
+    margin-top: 100px;
+    margin-left: 100px;
+    background-color: bisque;
+    width: fit-content;
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.tooltip{
+    display: none;
+}
+
+.tooltip::before{
+    content: '';
+    background-color: rgb(81, 38, 7);
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    z-index: -1;
+    left: -7px;
+    transform: rotate(45deg);
+}
+
+.tooltip-wrap:hover .tooltip{
+    display: block;
+    position: absolute;
+    right: -100%;
+    top: 0;
+    background-color: chocolate;
+    padding: 10px;
+}
