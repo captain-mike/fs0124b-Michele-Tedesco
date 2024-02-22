@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .space{
+            background-color: #000;
+            height: 80vh;
+        }
+        .parallax{
+            height: 500px;
+            background-image: url(https://picsum.photos/650/1000);
+        }
+        .fixed-ball{
+            position: fixed;
+            background-color: red;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="fixed-ball"></div>
+    <div class="space"></div>
+    <div class="parallax"></div>
+    <div class="space"></div>
+
+    <script>
+
+        let parallax = document.querySelector('.parallax')
+        let fixedBall = document.querySelector('.fixed-ball')
+
+        window.addEventListener('scroll',function(){
+           let top = window.scrollY;
+
+           parallax.style.backgroundPosition = `center ${(top * 0.8)}px`
+           fixedBall.style.top = `${(top * 0.4)}px`
+
+           console.dir(fixedBall)
+
+        })
+
+    </script>
+
+</body>
+</html>
