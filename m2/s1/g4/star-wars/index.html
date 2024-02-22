@@ -8,18 +8,38 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+    <button class="start">Play</button>
     
     <div class="scena">
 
         <div class="testo">
-            È un'epoca di sconvolgimenti nel mondo dello sviluppo web. Mentre le forze dell'oscurità cercano di dominare la galassia del codice, una nuova speranza sorge tra gli sviluppatori.
-            In una remota regione della vasta rete, un giovane sviluppatore di nome Wichele si trova alle prese con il misterioso messaggio di una principessa di nome Leia CSS. Il messaggio porta con sé i piani di una potente homepage che potrebbe rivoluzionare l'intera esperienza utente.
-            Deciso a portare questa nuova homepage alla luce, Wichele si unisce a un vecchio maestro, il saggio Obi-Wan Style, e al suo fedele droide, R2-HTML, intraprendendo un viaggio attraverso i pericolosi territori del web.
-            Ma l'oscura Signora del Web, Darth Browser, e il suo apprendista, il temuto Lord JavaScript, non stanno per permettere che questa rivoluzione avvenga senza lottare. Determinati a mantenere il loro controllo sul web, essi si preparano a schiacciare la ribellione prima che possa prendere piede.
-            Mentre la battaglia tra il Mentre la battaglia tra il bene e il male si prepara a infiammare il web, il destino della navigazione online pende sulla bilancia. E così, l'avventura per una nuova homepage comincia...
+            È un'epoca di sconvolgimenti nel mondo dello sviluppo web.<br> Mentre le forze dell'oscurità cercano di dominare la galassia del codice, una nuova speranza sorge tra gli sviluppatori.<br>
+            In una remota regione della vasta rete, un giovane sviluppatore di nome Wichele si trova alle prese con il misterioso messaggio di una principessa di nome Leia CSS. Il messaggio porta con sé i piani di una potente homepage che potrebbe rivoluzionare l'intera esperienza utente.<br>
+            Deciso a portare questa nuova homepage alla luce, Wichele si unisce a un vecchio maestro, il saggio Obi-Wan Style, e al suo fedele droide, R2-HTML, intraprendendo un viaggio attraverso i pericolosi territori del web.<br>
+            Ma l'oscura Signora del Web, Darth Browser, e il suo apprendista, il temuto Lord JavaScript, non stanno per permettere che questa rivoluzione avvenga senza lottare. Determinati a mantenere il loro controllo sul web, essi si preparano a schiacciare la ribellione prima che possa prendere piede.<br>
+            Mentre la battaglia tra il bene e il male si prepara a infiammare il web, il destino della navigazione online pende sulla bilancia.<br> E così, l'avventura per una nuova homepage comincia...
         </div>
 
     </div>
+
+    <audio id="player" src="Star_Wars_Main_Theme_Song.mp3"></audio>
+
+    <script>
+        const start = document.querySelector('.start')
+        const testo = document.querySelector('.testo')
+        const player = document.querySelector('#player')
+
+        start.addEventListener('click',function(){
+
+            start.remove()
+
+            testo.classList.add('play')
+
+            player.play()
+
+        })
+    </script>
 
 </body>
 </html>

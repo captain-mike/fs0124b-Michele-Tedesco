@@ -1,3 +1,20 @@
+.start{
+    position: fixed;
+    width: 30%;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    background-color: #ccc;
+    border: 10px outset #404040;
+}
+.start:active{
+    top: calc(50% + 1px);
+    border: 10px inset #404040;
+}
+
 .scena{
     height: 100vh;
     width: 100vw;
@@ -10,9 +27,14 @@
     background-size: cover;
 }
 
+:root{
+    --start-point:1920px
+}
+
 .testo{
+    display: none;
     color: #FAEC4F;
-    transform: rotateX(41deg) translateY(1820px);
+    transform: rotateX(41deg) translateY(var(--start-point));
     position: absolute;
     bottom: -125vh;
     font-size: 5rem;
@@ -24,9 +46,77 @@
     animation-duration: 120s;
     animation-iteration-count: 1;
     animation-timing-function: linear;
+    animation-play-state: paused;
+}
+@media screen and (max-width: 1800px) {
+    :root{
+        --start-point:1600px
+    }
+    .testo{
+        font-size: 4.5rem;
+    }
+}
+@media screen and (max-width: 1680px) {
+    :root{
+        --start-point:1200px
+    }
+    .testo{
+        font-size: 4rem;
+    }
+}
+@media screen and (max-width: 1280px) {
+    :root{
+        --start-point:1100px
+    }
+    .testo{
+        font-size: 3.5rem;
+    }
+}
+@media screen and (max-width: 900px) {
+    :root{
+        --start-point:1300px
+    }
+    .testo{
+        font-size: 3rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    :root{
+        --start-point:1800px
+    }
+    .testo{
+        font-size: 3rem;
+    }
+    .start{
+        font-size: 3rem;
+    }
+}
+@media screen and (max-width: 480px) {
+    :root{
+        --start-point:2200px
+    }
+    .testo{
+        font-size: 2rem;
+    }
+    .start{
+        width: 100%;
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width: 320px) {
+    :root{
+        --start-point:1000px
+    }
+    .testo{
+        font-size: 1.5rem;
+    }
+}
+.testo.play{
+    display: block;
+    animation-play-state: running;
 }
 
 @keyframes star-wars {
-    from {transform: rotateX(41deg) translateY(1820px);}
+    from {transform: rotateX(41deg) translateY(var(--start-point));}
     to {transform: rotateX(41deg) translateY(-1780px);}
 }
