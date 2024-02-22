@@ -1,0 +1,28 @@
+
+.scena{
+    perspective: 400px;
+    transform-style: preserve-3d;
+    border: 1px solid #000;
+}
+
+.quadrato{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    border: 1px solid #fff;
+}
+
+#q1{
+    transform: rotateX(45deg);
+}
+#q2{
+    transform: translateZ(-154px);
+    top: 16px;
+    position: relative;
+}
+#q3{
+    transform: translateZ(-54px);
+    top: -16px;
+    position: relative;
+    background-color: blue;
+}

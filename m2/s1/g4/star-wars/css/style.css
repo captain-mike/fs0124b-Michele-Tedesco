@@ -1,0 +1,32 @@
+.scena{
+    height: 100vh;
+    width: 100vw;
+    background-color: #000;
+    transform-style: preserve-3d;
+    perspective: 280px;
+    overflow: hidden;
+    line-height: 1.3;
+    background-image: url(../img/Screenshot_2024-02-22_103946.png);
+    background-size: cover;
+}
+
+.testo{
+    color: #FAEC4F;
+    transform: rotateX(41deg) translateY(1820px);
+    position: absolute;
+    bottom: -125vh;
+    font-size: 5rem;
+    width: 70%;
+    left: 15%;
+    text-align: center;
+    text-shadow: 1px 1px 5px #FAEC4F, -1px -1px 3px #FAEC4F;
+    animation-name: star-wars;
+    animation-duration: 120s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes star-wars {
+    from {transform: rotateX(41deg) translateY(1820px);}
+    to {transform: rotateX(41deg) translateY(-1780px);}
+}
