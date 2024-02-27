@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .collapse{
+            height: 0;
+            overflow: hidden;
+        }
+        .collapse.open{
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <button data-toggle="collapse" data-target="#esempio">Apri/chiudi 1</button>
+
+    <div class="collapse" id="esempio">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. At optio obcaecati laborum praesentium? Distinctio, ab facilis ad alias temporibus molestias ex et dicta quam eligendi expedita, quisquam illo voluptates amet?
+    </div>
+
+    <button data-toggle="collapse" data-target="#esempio2">Apri/chiudi 2</button>
+
+    <div class="collapse" id="esempio2">
+        Seconda collapse
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. At optio obcaecati laborum praesentium? Distinctio, ab facilis ad alias temporibus molestias ex et dicta quam eligendi expedita, quisquam illo voluptates amet?
+    </div>
+
+    <script>
+
+        let collapseButtons = document.querySelectorAll('button[data-toggle="collapse"]');
+
+        collapseButtons.forEach(btn => {
+
+            btn.addEventListener('click',()=>{
+
+                let target = btn.getAttribute('data-target');//'#esempio'
+
+                document.querySelector(target).classList.toggle('open')
+
+            })
+
+        })
+
+
+    </script>
+    
+</body>
+</html>

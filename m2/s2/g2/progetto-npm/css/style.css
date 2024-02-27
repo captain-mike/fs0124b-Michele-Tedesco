@@ -1,0 +1,7 @@
+:root{
+    --bs-primary-text-emphasis:#0056d8;/*così posso sovrascrivere una variabile*/
+}
+
+body{
+    color: var(--bs-secondary-text-emphasis);/*così posso richiamare una variabile di bootstrap*/
+}
