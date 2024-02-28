@@ -1,0 +1,5 @@
+Abbiamo compilato l'scss usando questo comando: 
+
+npm run compile
+
+compile è uno script che trovi nel file package.json, non è presente in principio ma devi scriverlo tu

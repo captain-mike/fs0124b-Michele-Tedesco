@@ -1,0 +1,42 @@
+@import 'reset';
+@import 'variabili';
+@import 'mixins';
+
+
+h1{
+    color: $colore;
+}
+
+h2{
+    font-size: nth($misure,3);//nth per prelevare dalla lista $misure
+    color: map-get($colori,secondary);
+}
+
+h3{
+    @include coloriFont;
+}
+
+ul{
+    li{
+        background-color: red;
+        &:hover{
+            background-color: green;
+        }
+        a{
+            color: #fff;
+        }
+    }
+}
+
+.area-chiara{
+    height: 200px;
+    font-style: italic;
+    text-decoration:line-through;
+    font-size: 1.3rem;
+    @include coloreDinamico(#640101)
+}
+.area-scura{
+    @extend .area-chiara;
+    font-size: 1.8rem;
+    @include coloreDinamico(#717fd1);
+}

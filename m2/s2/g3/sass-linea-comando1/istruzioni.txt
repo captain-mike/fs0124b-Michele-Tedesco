@@ -1,0 +1,9 @@
+Abbiamo compilato l'scss usando questo comando: 
+
+sass scss/style.scss css/style.css -w
+
+lo schema è questo: 
+
+sass input output -w
+
+-w = resta in attesa di cambiamenti nel file di input e ricompila quando vengono effettuati
