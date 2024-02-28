@@ -4,7 +4,11 @@
 
 
 h1{
+    font-size: 3rem;
     color: $colore;
+    @media screen and (min-width:800px){
+        color: #777;
+    }
 }
 
 h2{
@@ -39,4 +43,23 @@ ul{
     @extend .area-chiara;
     font-size: 1.8rem;
     @include coloreDinamico(#717fd1);
+}
+
+$step: 15, 30, 45;
+
+@each $s in $step{
+
+    .mt-#{$s}{
+        margin-top: $s + px;
+    }
+    .mb-#{$s}{
+        margin-bottom: $s + px;
+    }
+    .mr-#{$s}{
+        margin-right: $s + px;
+    }
+    .ml-#{$s}{
+        margin-left: $s + px;
+    }
+
 }
