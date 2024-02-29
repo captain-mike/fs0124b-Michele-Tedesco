@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile": "sass scss/style.scss css/style.css -w"
+    "giacomo": "sass scss/style.scss css/style.css -w"
   },
   "author": "",
   "license": "ISC"

@@ -3,46 +3,51 @@
 @import 'mixins';
 
 
-h1{
+h1 {
     font-size: 3rem;
     color: $colore;
-    @include breakpoint(desktop){
+
+    @include breakpoint(desktop) {
         color: #ccc;
     }
-    @include breakpoint(tablet){
+
+    @include breakpoint(tablet) {
         color: #777;
     }
 }
 
-h2{
-    font-size: nth($misure,3);//nth per prelevare dalla lista $misure
-    color: map-get($colori,secondary);
+h2 {
+    font-size: nth($misure, 3); //nth per prelevare dalla lista $misure
+    color: map-get($colori, secondary);
 }
 
-h3{
+h3 {
     @include coloriFont;
 }
 
-ul{
-    li{
+ul {
+    li {
         background-color: red;
-        &:hover{
+
+        &:hover {
             background-color: green;
         }
-        a{
+
+        a {
             color: #fff;
         }
     }
 }
 
-.area-chiara{
+.area-chiara {
     height: 200px;
     font-style: italic;
-    text-decoration:line-through;
+    text-decoration: line-through;
     font-size: 1.3rem;
     @include coloreDinamico(#640101)
 }
-.area-scura{
+
+.area-scura {
     @extend .area-chiara;
     font-size: 1.8rem;
     @include coloreDinamico(#717fd1);
@@ -50,19 +55,72 @@ ul{
 
 $step: 15, 30, 45;
 
-@each $s in $step{
+@each $s in $step {
 
-    .mt-#{$s}{
+    .mt-#{$s} {
         margin-top: $s + px;
     }
-    .mb-#{$s}{
+
+    .mb-#{$s} {
         margin-bottom: $s + px;
     }
-    .mr-#{$s}{
+
+    .mr-#{$s} {
         margin-right: $s + px;
     }
-    .ml-#{$s}{
+
+    .ml-#{$s} {
         margin-left: $s + px;
     }
 
 }
+
+
+
+@mixin spaziature($direzione, $dirAbbreviata, $misura) {
+
+
+    .m#{$dirAbbreviata}-#{$misura} {
+        margin-#{$direzione}: $misura + px;
+    }
+
+    .p#{$dirAbbreviata}-#{$misura} {
+        padding-#{$direzione}: $misura + px;
+    }
+
+}
+
+@mixin generaSpaziature($misura) {
+
+    $sizesMap : (
+        top:t,
+        left:l,
+        bottom:b,
+        right:r
+    );
+
+    @each $chiave, $valore in $sizesMap {
+
+        @include spaziature($chiave, $valore, $misura);
+
+    }
+}
+
+$sizes: 15, 30, 45, 90, 1050;
+
+@each $size in $sizes{
+    @include generaSpaziature($size);
+}
+
+
+
+/*
+
+.mt-15{
+    margin-top:15px
+}
+.pt-15{
+    padding-top:15px
+}
+
+*/
