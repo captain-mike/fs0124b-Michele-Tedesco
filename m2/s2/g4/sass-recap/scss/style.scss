@@ -1,0 +1,68 @@
+@import 'reset';
+@import 'variabili';
+@import 'mixins';
+
+
+h1{
+    font-size: 3rem;
+    color: $colore;
+    @include breakpoint(desktop){
+        color: #ccc;
+    }
+    @include breakpoint(tablet){
+        color: #777;
+    }
+}
+
+h2{
+    font-size: nth($misure,3);//nth per prelevare dalla lista $misure
+    color: map-get($colori,secondary);
+}
+
+h3{
+    @include coloriFont;
+}
+
+ul{
+    li{
+        background-color: red;
+        &:hover{
+            background-color: green;
+        }
+        a{
+            color: #fff;
+        }
+    }
+}
+
+.area-chiara{
+    height: 200px;
+    font-style: italic;
+    text-decoration:line-through;
+    font-size: 1.3rem;
+    @include coloreDinamico(#640101)
+}
+.area-scura{
+    @extend .area-chiara;
+    font-size: 1.8rem;
+    @include coloreDinamico(#717fd1);
+}
+
+$step: 15, 30, 45;
+
+@each $s in $step{
+
+    .mt-#{$s}{
+        margin-top: $s + px;
+    }
+    .mb-#{$s}{
+        margin-bottom: $s + px;
+    }
+    .mr-#{$s}{
+        margin-right: $s + px;
+    }
+    .ml-#{$s}{
+        margin-left: $s + px;
+    }
+
+}

@@ -1,0 +1,38 @@
+@mixin coloriFont{
+    color: purple;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+@mixin coloreDinamico($coloreSfondo){//#640101
+    
+    background-color: $coloreSfondo;
+    
+    @if( lightness($coloreSfondo) > 50){
+
+        color: darken($coloreSfondo,20)
+        
+    }@else{
+        
+        color: lighten($coloreSfondo,20)
+
+    }
+
+}
+
+@mixin breakpoint($misura){
+
+    @if($misura == desktop){
+        @media screen and (min-width:1440px){
+            @content;
+        }
+    }@else if($misura == laptop){
+        @media screen and (min-width:1280px){
+            @content;
+        }
+    }@else if($misura == tablet){
+        @media screen and (min-width:768px){
+            @content;
+        }
+    }
+
+}
