@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        {
+            let pizza = {
+                gusto: 'Margherita',
+                prezzo: 5,
+                "lista-ingredienti": [
+                    'Mozzarella',
+                    'Pomodoro'
+                ],
+                misure: {
+                    mini: true,
+                    normale: true,
+                    metro: false
+                }
+            }
+
+
+            console.log(pizza.gusto);//'Margherita'
+            console.log(pizza['lista-ingredienti'][1]);//['Mozzarella', 'Pomodoro']
+
+
+            console.log(pizza['lista-ingredienti']);//pomodoro
+
+            console.log(pizza.misure.normale);//true}
+        }
+
+        {
+            //non dobbiamo confonderci, nei nostri script potrebbero esistere variabili con lo stesso nome della proprietà di un oggetto
+            let gusto = 'Questa è la variabile'
+
+            //e potrebbero anche esistere funzioni con lo stesso nome di un motodo che appartiene ad un oggetto
+            function mostraDettagli(){
+                console.log('questa è la funzione');
+            }
+            
+            
+            let pizza = {
+                gusto: 'Margherita',
+                prezzo: 5,
+                mostraDettagli : function(){//metodo
+                    console.log(`La pizza ${this.gusto} costa ${this.prezzo}€`);
+                },
+                prezzoScontato: function(){
+                    return this.prezzo * 0.8;
+                }
+            }
+            
+            pizza.mostraDettagli()
+           // mostraDettagli() questo è il richiamo alla funzione, non al metodo
+
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+
+        class GestioneHTML{
+
+            static proprietà = ''
+
+            static creaElementoConClasse(tagName, ...classi){
+                let element = document.createElement(tagName)
+                element.classList.add(...classi)
+                return element;
+            }
+
+        }
+
+       let result = GestioneHTML.creaElementoConClasse('table','table');
+       let result2 = GestioneHTML.creaElementoConClasse('div','alert','alert-success');
+
+       console.log(result, result2);
+
+
+       //esempio di metodo statico già esistente
+       Math.random()
+
+
+       //esempio di metodo non statico
+        let now = new Date()
+        now.getHours()//non è statico, quindi posso ottenere l'ora, solo dopo aver istanziato date
+
+        Date.parse()
+
+
+
+
+
+    </script>
+    
+
+</body>
+</html>

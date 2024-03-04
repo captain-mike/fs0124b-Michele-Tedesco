@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        {
+
+            function Pizza(_gusto, _prezzo){
+
+                this.gusto = _gusto;
+                this.prezzo = _prezzo;
+                this.ingredienti = ['pomodoro','mozzarella'];
+                this.mostraDettagli = function(){//metodo
+                    console.log(`La pizza ${this.gusto} costa ${this.prezzo}€`);
+                }
+                this.prezzoScontato = function(){
+                    return this.prezzo * 0.8;
+                }
+
+            }
+
+            let margherita = new Pizza('Margherita',5);
+            let diavola = new Pizza('Diavola',1);
+
+        console.table([margherita, diavola])
+
+        margherita.mostraDettagli()
+        diavola.mostraDettagli()
+            
+
+
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        {
+
+            
+            class Pizza{
+
+                constructor(_gusto, _prezzo, _ingredienti){
+                    this.gusto = _gusto;
+                    this.prezzo = _prezzo;
+                    this.ingredienti = _ingredienti;
+                }
+
+                mostraDettagli(){//metodo
+                    console.log(`La pizza ${this.gusto} costa ${this.prezzo}€`);
+                }
+                prezzoScontato(){
+                    return this.prezzo * 0.8;
+                }
+            }
+
+            let margherita = new Pizza('Margherita',5,['pomodoro','mozzarella','basilico']);
+
+
+
+            
+
+            class PizzaBianca extends Pizza{
+
+                constructor(_gusto, _prezzo){
+                    
+                    super(_gusto, _prezzo, ['Mozzarella']);
+
+                    this.proprietàAggiuntiva = ''
+                }
+
+                aggiungiIngrediente(...ingredienti){
+
+                    if(this.ingrediente != 'pomodoro'){
+                        this.ingredienti.push(...ingredienti)
+                    }
+
+                }
+
+            }
+
+
+
+
+            let formaggi = new PizzaBianca('4 formaggi',8);
+            formaggi.aggiungiIngrediente('Taleggio','Emmental','Provola','Gorgonzola')
+            
+            let salsicciaFriarielli = new PizzaBianca('Salsiccia e friarielli',8);
+
+            console.log(formaggi);
+            formaggi.mostraDettagli()
+
+
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>
