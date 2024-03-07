@@ -1,9 +1,14 @@
 {
-    "pizze":[
-        {
-            "id":1,
-            "gusto":"Margherita",
-            "prezzo":5
-        }
-    ]
+  "pizze": [
+    {
+      "gusto": "Diavola",
+      "prezzo": "1",
+      "id": 1
+    },
+    {
+      "gusto": "Mimosa",
+      "prezzo": "8",
+      "id": 6
+    }
+  ]
 }
