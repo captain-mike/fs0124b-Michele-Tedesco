@@ -18,3 +18,7 @@ class Persona {
         this.anni = 0;
     }
 }
+let objPersona = {
+    nome: 'Mario',
+    cognome: 'Rossi',
+};
