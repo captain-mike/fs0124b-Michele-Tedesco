@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AttributiComponent {
 
-  testo:string = '<b>Ciao</b>'
+  testo:string = '<b>Ciao</b>';
+  urlImmagine:string = 'https://picsum.photos/200/300';
+
+  coloreParagrafo:string = 'green'
 
 }

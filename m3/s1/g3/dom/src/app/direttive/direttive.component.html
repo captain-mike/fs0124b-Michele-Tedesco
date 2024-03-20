@@ -1,0 +1,24 @@
+<p [ngStyle]="{
+  'background-color':bgColor,
+  'color':color
+  }">TESTO</p>
+
+  <!--
+    in pratica è un po' come scrivere così
+  <p
+  [style.backgroundColor]="bgColor"
+  [style.color]="color"
+  >TESTO</p> -->
+
+
+  <p [ngClass]="{
+    'alert':true,
+    'alert-success':success,
+    'alert-danger':!success,
+  }">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, impedit amet. Omnis eveniet tempora veritatis id vel quam ipsam asperiores reiciendis quo deleniti. Excepturi possimus repellendus eveniet ducimus, corporis natus.
+  </p>
+
+  <button class="btn btn-primary" (click)="success = !success">
+    Cambia stato
+  </button>

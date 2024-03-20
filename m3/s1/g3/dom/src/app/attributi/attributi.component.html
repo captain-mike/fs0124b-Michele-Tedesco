@@ -1,1 +1,14 @@
+<!--Gestione delle proprietà degli oggetti del DOM-->
 <p [innerHTML]="testo"></p>
+<p>{{testo}}</p>
+
+<p [style.color]="coloreParagrafo">Testo colorato da js</p>
+
+<!--Al click sul bottone la variabile coloreParagrafo viene riassegnata, provocando l'aggiornamento grafico-->
+<button (click)="coloreParagrafo = 'red'">Cambia colore</button>
+
+<!--Assegnamento attributi presenti anche in html-->
+
+<img [src]="urlImmagine">
+
+
