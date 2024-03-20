@@ -1,0 +1,5 @@
+<label for="anni">Scrivi la tua età</label>
+<input type="number" id="anni" class="form-control" [(ngModel)]="anni">
+
+<p *ngIf="anni >= 18">Sei maggiorenne</p>
+<p *ngIf="anni < 18">Sei minorenne</p>

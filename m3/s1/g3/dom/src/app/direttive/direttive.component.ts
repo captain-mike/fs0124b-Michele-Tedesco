@@ -10,5 +10,6 @@ export class DirettiveComponent {
   bgColor:string = 'yellow'
   color:string = 'red'
   success:boolean = true
+  visibile:boolean = true
 
 }

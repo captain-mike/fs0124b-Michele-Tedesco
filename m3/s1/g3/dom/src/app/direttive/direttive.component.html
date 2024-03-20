@@ -22,3 +22,11 @@
   <button class="btn btn-primary" (click)="success = !success">
     Cambia stato
   </button>
+
+  <!--direttiva strutturale *ngIf-->
+
+  <h1 *ngIf="visibile">Elemento a scomparsa</h1>
+
+  <button class="btn btn-primary" (click)="visibile = !visibile">
+    Mostra/nascondi
+  </button>
