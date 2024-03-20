@@ -1,0 +1,40 @@
+
+<h1>Benvenuto nel blog</h1>
+<div class="bg-info py-5">
+    <div class="container">
+
+
+    <h2>Post in evidenza</h2>
+
+    <div class="card" *ngIf="postArr.length > 0">
+      <div class="card-header">
+        {{postArr[0].title}}
+      </div>
+      <div class="card-body">
+        <p class="card-text">{{postArr[0].body}}</p>
+        <ul class="list-group list-group-flush">
+          <li *ngFor="let tag of postArr[0].tags" class="list-group-item">{{tag}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <h2 class="mt-5">Potrebbe interessarti anche</h2>
+
+  <div class="container">
+
+    <div class="card mb-3" *ngFor="let post of postRandom">
+      <h1 class="card-header">
+        {{post.title}}
+      </h1>
+      <div class="card-body">
+        <p class="card-text">{{post.body}}</p>
+        <ul class="list-group list-group-flush">
+          <li *ngFor="let tag of post.tags" class="list-group-item">{{tag}}</li>
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
