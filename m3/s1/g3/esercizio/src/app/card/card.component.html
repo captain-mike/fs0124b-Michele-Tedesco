@@ -1,0 +1,11 @@
+<div class="card" *ngIf="post">
+  <div class="card-header">
+    {{post.title}}
+  </div>
+  <div class="card-body">
+    <p class="card-text">{{post.body}}</p>
+    <ul class="list-group list-group-flush">
+      <li *ngFor="let tag of post.tags" class="list-group-item">{{tag}}</li>
+    </ul>
+  </div>
+</div>
