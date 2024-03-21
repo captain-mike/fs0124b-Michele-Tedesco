@@ -1,15 +1,18 @@
 [
   {
+    "id":1,
     "gusto":"Margherita",
     "prezzo":5,
     "disponibile":true
   },
   {
+    "id":2,
     "gusto":"Diavola",
     "prezzo":1,
     "disponibile":true
   },
   {
+    "id":3,
     "gusto":"Ananas",
     "prezzo":500,
     "disponibile":false

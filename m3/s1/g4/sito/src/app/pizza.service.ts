@@ -24,4 +24,9 @@ export class PizzaService {
     .then(res => res.filter(p => !p.disponibile))
   }
 
+  getPizzaById(id:string):Promise<iPizze | undefined>{
+    return this.getAllPizza()
+    .then(res => res.find(p => p.id == id))
+  }
+
 }

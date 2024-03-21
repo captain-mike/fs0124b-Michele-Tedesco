@@ -9,6 +9,7 @@ import { ContattiComponent } from './pages/contatti/contatti.component';
 import { HeaderComponent } from './main-components/header/header.component';
 import { FooterComponent } from './main-components/footer/footer.component';
 import { Pagina404Component } from './pages/pagina404/pagina404.component';
+import { DettaglioPizzaComponent } from './pages/dettaglio-pizza/dettaglio-pizza.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { Pagina404Component } from './pages/pagina404/pagina404.component';
     ContattiComponent,
     HeaderComponent,
     FooterComponent,
-    Pagina404Component
+    Pagina404Component,
+    DettaglioPizzaComponent
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ChiSiamoComponent } from './pages/chi-siamo/chi-siamo.component';
 import { ContattiComponent } from './pages/contatti/contatti.component';
 import { Pagina404Component } from './pages/pagina404/pagina404.component';
+import { DettaglioPizzaComponent } from './pages/dettaglio-pizza/dettaglio-pizza.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path:'chi-siamo',
     component: ChiSiamoComponent
+  },
+  {
+    path:'pizze/:id',
+    component: DettaglioPizzaComponent
   },
   {
     path:'contatti',
