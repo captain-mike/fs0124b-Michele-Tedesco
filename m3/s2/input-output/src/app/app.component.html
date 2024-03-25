@@ -1,0 +1,21 @@
+
+<!--In questo ngIf metti un true per vedere i tags-->
+<div class="container" *ngIf="false">
+
+  <h2>Componente in input</h2>
+  <app-input nome="Mario" cognome="Rossi"></app-input>
+
+  <h2>Componente in output</h2>
+  <app-output (onEventClick)="mostraDato($event)"></app-output>
+
+  <div class="alert alert-success" *ngIf="testoInviato">
+    Valore inviato: {{testoInviato}}
+  </div>
+
+</div>
+
+<div class="container">
+
+  <app-pratica></app-pratica>
+
+</div>

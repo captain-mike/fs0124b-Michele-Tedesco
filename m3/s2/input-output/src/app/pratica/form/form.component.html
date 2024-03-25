@@ -1,0 +1,16 @@
+
+
+  <input type="text" class="form-control"
+  placeholder="gusto"  [(ngModel)]="pizza.gusto"
+  #g
+  >
+  <input type="number" class="form-control" placeholder="prezzo" [(ngModel)]="pizza.prezzo">
+  <select class="form-control" [(ngModel)]="pizza.disponibile">
+    <option [value]="true">disponibile</option>
+    <option [value]="false">Non disponibile</option>
+  </select>
+
+  <button [disabled]="g.value == ''" (click)="invia()" class="btn btn-primary">Crea Pizza</button>
+
+
+

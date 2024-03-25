@@ -1,0 +1,20 @@
+<app-form (onCreatePizza)="aggiungi($event)"></app-form>
+
+<table class="table mt-5">
+
+  <tr>
+    <th>Gusto</th>
+    <th>Prezzo</th>
+    <th>Disponibile</th>
+    <th>Azioni</th>
+  </tr>
+  <tr
+  *ngFor="let pizzaObj of arrPizze"
+
+  [pizza]="pizzaObj"
+
+  (onElimina)="rimuovi($event)"
+
+  class="app-item"></tr>
+
+</table>
