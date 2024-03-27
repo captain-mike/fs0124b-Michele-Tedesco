@@ -1,3 +1,12 @@
 <p>page1 works!</p>
 
-Numero attuale : {{count}}
+
+<hr>
+<hr>
+<hr>
+
+<input type="text" [(ngModel)]="testo">
+<button (click)="send()">Invia</button>
+
+Testi creati:
+<div *ngFor="let testo of testi">{{testo}}</div>

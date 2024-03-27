@@ -1,0 +1,26 @@
+<h1>Lista Pizze</h1>
+
+<div *ngIf="pizze.length == 0" class="alert alert-info">
+  Caricamento in corso
+</div>
+
+<table *ngIf="pizze.length > 0" class="table">
+  <tr>
+    <th>#</th>
+    <th>Gusto</th>
+    <th>Prezzo</th>
+    <th>Disponibile</th>
+    <th>azioni</th>
+  </tr>
+
+  <tr *ngFor="let pizza of pizze; let i = index">
+    <td>{{i + 1}}</td>
+    <td>{{pizza.gusto}}</td>
+    <td>{{pizza.prezzo}}</td>
+    <td>{{pizza.disponibile}}</td>
+    <td>
+      <button [routerLink]="['/edit',pizza.id]" class="btn btn-warning">Modifica</button>
+      <button (click)="cancellaPizza(pizza.id)" class="btn btn-danger">Elimina</button>
+    </td>
+  </tr>
+</table>

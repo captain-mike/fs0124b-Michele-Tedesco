@@ -1,5 +1,6 @@
+import { TestService } from './../test.service';
 import { Component } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Observable, Subscription, filter, map } from 'rxjs';
 
 @Component({
   selector: 'app-page1',
@@ -8,9 +9,13 @@ import { Observable, Subscription } from 'rxjs';
 })
 export class Page1Component {
 
+  testi:string[] = []
+
   sub!:Subscription
 
-  count:number = 0;
+  testo:string = '';
+
+  constructor(private testSvc:TestService){}
 
   ngOnInit(){
 
@@ -22,7 +27,7 @@ export class Page1Component {
 
         observer.next(count)
 
-        if(count > 3){
+        if(count > 300){
           observer.error('Errore')
         }
 
@@ -34,17 +39,28 @@ export class Page1Component {
 
 ///////////////////////////////////////////////
 
-
-    this.sub = obs.subscribe({
-      next: res => this.count = res,
+    //salvo il subscribe nella proprietà per poterla usare più tardi ed effetturare l'unsubscribe
+    this.sub = obs.pipe(
+      filter(n => n > 2),
+      map(n => 'Numero ricevuto: ' + n)
+      )
+    .subscribe({
+      next: res => console.log(res),
       error: error => console.error(error),
     })
 
+    this.testSvc.$testo
+    .subscribe(t => this.testi.push(t))
   }
 
 
   ngOnDestroy(){
     this.sub.unsubscribe()//stoppa l'observable
   }
+
+  send(){
+    this.testSvc.add(this.testo)
+  }
+
 
 }
