@@ -1,0 +1,12 @@
+<div class="card-body">
+  <h5 class="card-title">{{post.title}}</h5>
+  <p class="card-text">{{post.body}}</p>
+
+  <div class="tags mb-5">
+    <button class="btn btn-secondary mx-1"
+    *ngFor="let tag of post.tags"
+    >{{tag}}</button>
+  </div>
+
+  <a href="#" class="btn btn-primary">Go somewhere</a>
+</div>
