@@ -1,0 +1,18 @@
+<form>
+  <input name="gusto" [(ngModel)]="pizza.gusto" type="text" placeholder="Gusto" class="form-control">
+  <input name="prezzo" [(ngModel)]="pizza.prezzo" type="number" placeholder="Prezzo" class="form-control">
+  <select name="disponibile" [(ngModel)]="pizza.disponibile" class="form-control">
+    <option [value]="true">disponibile</option>
+    <option [value]="false">non disponibile</option>
+  </select>
+  <button (click)="edit()" class="btn btn-primary">Modifica</button>
+</form>
+
+
+<div *ngIf="resultPizza" class="alert alert-success">
+
+  la pizza id:{{resultPizza.id}}
+  chiamata {{resultPizza.gusto}} è stata creata con successo.<br>
+  Verrai reindirizzato tra 5 secondi.
+
+</div>

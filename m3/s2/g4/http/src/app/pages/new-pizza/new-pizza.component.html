@@ -1,0 +1,11 @@
+<form>
+  <input name="gusto" [(ngModel)]="newPizza.gusto" type="text" placeholder="Gusto" class="form-control">
+  <input name="prezzo" [(ngModel)]="newPizza.prezzo" type="number" placeholder="Prezzo" class="form-control">
+  <select name="disponibile" [(ngModel)]="newPizza.disponibile" class="form-control">
+    <option [value]="true">disponibile</option>
+    <option [value]="false">non disponibile</option>
+  </select>
+  <button (click)="save()" class="btn btn-primary">Crea</button>
+</form>
+
+
