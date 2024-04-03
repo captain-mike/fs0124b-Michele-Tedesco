@@ -1,0 +1,8 @@
+<div *ngFor="let user of data">
+
+  <div>{{user.firstName}} {{user.lastName}}</div>
+  <div class="ps-5" *ngFor="let todo of user.todos">
+    {{todo.todo}}
+  </div>
+
+</div>
