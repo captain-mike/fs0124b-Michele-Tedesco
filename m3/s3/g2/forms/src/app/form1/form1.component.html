@@ -1,0 +1,26 @@
+<form>
+
+  <input type="text" name="nome"
+  [(ngModel)]="loginData.nome"
+  class="form-control"
+   placeholder="Nome">
+
+  <input
+    [type]="formType"
+    class="form-control"
+    placeholder="Password"
+    [(ngModel)]="loginData.password"
+    name="password"
+  >
+  <button class="btn btn-secondary">Invia</button>
+
+  <button (click)="showHide()" [innerText]="getButtonText()"> </button>
+
+</form>
+
+{{loginData.nome}}
+
+<hr>
+
+{{loginData | json}}
+

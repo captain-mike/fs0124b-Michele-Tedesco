@@ -1,0 +1,40 @@
+<form (ngSubmit)="submit(f)" #f="ngForm">
+
+  <input type="text" required name="nome" ngModel class="form-control" #nome="ngModel"
+  placeholder="nome">
+  <div *ngIf="nome.invalid && nome.dirty" class="alert alert-danger">
+    Devi inserire il nome
+  </div>
+
+  <input type="text" name="cognome" ngModel class="form-control"
+  placeholder="cognome">
+
+  <div ngModelGroup="authData" class="form-row row">
+    <div class="form-group col-6">
+      <input type="email" name="email" ngModel class="form-control"
+      placeholder="email">
+    </div>
+    <div class="form-group col-6">
+      <input type="password" name="password" ngModel class="form-control"
+      placeholder="password">
+    </div>
+  </div>
+
+  <div class="form-group">
+
+    <div class="form-check" *ngFor="let g of generi">
+      <input [id]="g" [value]="g" type="radio" name="genere" ngModel class="form-check-input">
+      <label [for]="g">{{g}}</label>
+    </div>
+
+  </div>
+
+  <button [disabled]="f.invalid" class="btn btn-success">Invia</button>
+
+</form>
+
+<button (click)="compila()">Compila form</button>
+
+Il nome inserito è {{f.value.nome}}
+<hr>
+Validità del form: {{f.valid}}
