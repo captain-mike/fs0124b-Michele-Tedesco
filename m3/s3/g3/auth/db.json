@@ -1,4 +1,10 @@
 {
   "users": [
+    {
+      "email": "mario@varano.it",
+      "password": "$2a$10$OPHvFM/H4v5kdvbhP/MzLuWekV.tUcOZRbUw/jSqv5CpexJRWpN3W",
+      "name": "Mario",
+      "id": 1
+    }
   ]
 }

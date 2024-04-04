@@ -8,10 +8,10 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="isUserLoggedIn">
           <a class="nav-link" routerLink="/dashboard">Dashboard</a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown"  *ngIf="!isUserLoggedIn">
           <a class="nav-link dropdown-toggle" (click)="show = !show" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Account
           </a>
@@ -22,6 +22,7 @@
           </ul>
         </li>
       </ul>
+      <button (click)="logout()" class="btn btn-danger">Esci</button>
     </div>
   </div>
 </nav>
