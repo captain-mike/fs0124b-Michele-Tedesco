@@ -27,11 +27,11 @@ export class AuthService {
   //isLoggedIn$ = this.user$.pipe(map(user => Boolean(user)))
 
   constructor(
-    private http:HttpClient,
-    private router:Router
+    private http:HttpClient,//per le chiamate http
+    private router:Router//per i redirect
     ) {
 
-      this.restoreUser()
+      this.restoreUser()//come prima cosa controllo se è già attiva una sessione, e la ripristino
 
     }
 
@@ -82,12 +82,32 @@ export class AuthService {
     if(!userJson) return; //se l'utente non si è mai loggato blocca tutto
 
     const accessData:AccessData = JSON.parse(userJson)//se viene eseguita questa riga significa che i dati ci sono, quindi la converto da json ad oggetto per permetterne la manipolazione
-    if(this.jwtHelper.isTokenExpired(accessData.accessToken)) return; //se il token è scaduto blocco tutto
+    if(this.jwtHelper.isTokenExpired(accessData.accessToken)) return; //ora controllo se il token è scaduto, se lo è fermiamo la funzione
 
+//se nessun return viene eseguito proseguo
+    this.authSubject.next(accessData.user)//invio i dati dell'utente al behaviorsubject
+    this.autoLogout(accessData.accessToken)//riavvio il timer per la scadenza della sessione
 
-    this.authSubject.next(accessData.user)
-    this.autoLogout(accessData.accessToken)
+  }
 
+  errors(err: any) {
+    switch (err.error) {
+        case "Email and Password are required":
+            return new Error('Email e password obbligatorie');
+            break;
+        case "Email already exists":
+            return new Error('Utente esistente');
+            break;
+        case 'Email format is invalid':
+            return new Error('Email scritta male');
+            break;
+        case 'Cannot find user':
+            return new Error('utente inesistente');
+            break;
+            default:
+        return new Error('Errore');
+            break;
+    }
   }
 
 
