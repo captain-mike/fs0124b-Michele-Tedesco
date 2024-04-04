@@ -22,7 +22,7 @@
           </ul>
         </li>
       </ul>
-      <button (click)="logout()" class="btn btn-danger">Esci</button>
+      <button (click)="logout()" *ngIf="isUserLoggedIn" class="btn btn-danger">Esci</button>
     </div>
   </div>
 </nav>

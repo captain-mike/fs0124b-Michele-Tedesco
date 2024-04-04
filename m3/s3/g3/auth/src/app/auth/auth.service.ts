@@ -22,9 +22,14 @@ export class AuthService {
   authSubject = new BehaviorSubject<IUser|null>(null);//se nel behavioursubject c'è null significa che l'utente non è loggato, altrimenti conterrà l'oggetto user con tutte le sue info
 
   user$ = this.authSubject.asObservable()//contiene i dati dell'utente loggato oppure null
-  isLoggedIn$ = this.user$.pipe(map(user => !!user))//restituisce true se lò'utente è loggato, false se non lo è
+  isLoggedIn$ = this.user$.pipe(
+    map(user => !!user),
+    tap(user =>  this.syncIsLoggedIn = user)
+    )//restituisce true se lò'utente è loggato, false se non lo è
   //!!user è come scrivere Boolean(user)
   //isLoggedIn$ = this.user$.pipe(map(user => Boolean(user)))
+
+  syncIsLoggedIn:boolean = false;
 
   constructor(
     private http:HttpClient,//per le chiamate http
@@ -63,6 +68,17 @@ export class AuthService {
 
     this.router.navigate(['/auth/login'])//mando via l'utente loggato
 
+  }
+
+
+  getAccessToken():string{
+    const userJson = localStorage.getItem('accessData')//recupero io dati di accesso
+    if(!userJson) return ''; //se l'utente non si è mai loggato blocca tutto
+
+    const accessData:AccessData = JSON.parse(userJson)//se viene eseguita questa riga significa che i dati ci sono, quindi la converto da json ad oggetto per permetterne la manipolazione
+    if(this.jwtHelper.isTokenExpired(accessData.accessToken)) return ''; //ora controllo se il token è scaduto, se lo è fermiamo la funzione
+
+    return accessData.accessToken
   }
 
   autoLogout(jwt:string){
