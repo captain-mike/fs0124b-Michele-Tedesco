@@ -1,0 +1,25 @@
+<form>
+
+  <input type="text" name="firstName"
+  [(ngModel)]="user.firstName"
+  class="form-control" placeholder="firstName">
+
+  <input type="text" name="lastName"
+  [(ngModel)]="user.lastName"
+  class="form-control" placeholder="lastName">
+
+  <input type="email" name="email"
+  [(ngModel)]="user.email"
+  class="form-control" placeholder="email">
+
+  <input type="url" name="image"
+  [(ngModel)]="user.image"
+  class="form-control" placeholder="image">
+
+  <input type="text" name="title"
+  [(ngModel)]="user.title"
+  class="form-control" placeholder="title">
+
+  <button (click)="modificaUtente()"  class="btn btn-primary">Modifica</button>
+
+</form>

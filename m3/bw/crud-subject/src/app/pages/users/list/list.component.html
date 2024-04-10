@@ -1,0 +1,24 @@
+<app-add></app-add>
+<table class="table">
+  <tr>
+    <th>id</th>
+    <th>firstName</th>
+    <th>lastName</th>
+    <th>email</th>
+    <th>image</th>
+    <th>title</th>
+    <th>Azioni</th>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>{{user.id}}</td>
+    <td>{{user.firstName}}</td>
+    <td>{{user.lastName}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.image}}</td>
+    <td>{{user.title}}</td>
+    <td>
+      <button (click)="elimina(user.id)" class="btn btn-danger">Elimina</button>
+      <button [routerLink]="['/edit',user.id]" class="btn btn-warning">Modifica</button>
+    </td>
+  </tr>
+</table>

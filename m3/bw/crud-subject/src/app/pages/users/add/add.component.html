@@ -1,0 +1,25 @@
+<form>
+
+  <input type="text" name="firstName"
+  [(ngModel)]="newUser.firstName"
+  class="form-control" placeholder="firstName">
+
+  <input type="text" name="lastName"
+  [(ngModel)]="newUser.lastName"
+  class="form-control" placeholder="lastName">
+
+  <input type="email" name="email"
+  [(ngModel)]="newUser.email"
+  class="form-control" placeholder="email">
+
+  <input type="url" name="image"
+  [(ngModel)]="newUser.image"
+  class="form-control" placeholder="image">
+
+  <input type="text" name="title"
+  [(ngModel)]="newUser.title"
+  class="form-control" placeholder="title">
+
+  <button (click)="aggiungiUtente()" class="btn btn-primary">Crea</button>
+
+</form>
